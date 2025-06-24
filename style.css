@@ -1,0 +1,176 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f7f5f5; /* Beige background */
+  color: #333;
+}
+
+header {
+  color: white;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-img {
+  width: 80px;
+  height: 80px;
+}
+
+.nav-link {
+  font-weight: bold;
+  text-decoration: none !important;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #eb923f !important;
+}
+
+.nav-link.active {
+  color: #a7f6d6 !important;
+}
+
+.hero-breadcrumb {
+  color: #329ff9;
+}
+
+.hero-banner {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Full screen height */
+  overflow: hidden;
+}
+
+.hero-banner video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 103%;
+  object-fit: cover;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+.hero-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 2;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 3;
+  top: 50%;
+  transform: translateY(-50%);
+  color: white;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.hero-search-bar input {
+  max-width: 500px;
+  margin: 0 auto;
+  height: 50px;
+  border-radius: 30px;
+  font-size: 16px;
+  padding: 0 20px;
+}
+
+.hero-breadcrumb {
+  top: 0px; /* position just below navbar */
+  left: 30px;
+  z-index: 3;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.hero-breadcrumb a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.hero-breadcrumb a:hover {
+  text-decoration: underline;
+  color: #a7f6d6;
+}
+
+/* Main heading style */
+.main-heading {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #003580;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Subtext phrase style */
+.subtext-intro {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #585757;
+  font-family: 'Segoe UI', sans-serif;
+  font-style: italic;
+}
+
+.search-section {
+  background-color: #ede5d6;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+}
+
+/* Custom input styling */
+.search-input, .date-input, .guest-input {
+  border: 1px solid #fffdfd;
+  border-radius: 4px;
+  padding: 10px 12px;
+  font-size: 14px;
+}
+
+.trending-destinations h3 {
+  font-size: 1.75rem;
+  color: #003580; 
+}
+
+.destination-card {
+  overflow: hidden;
+  border-radius: 12px;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.destination-card:hover {
+  transform: scale(1.03);
+}
+
+.destination-card img {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.destination-overlay {
+  position: absolute;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.55);
+  width: 100%;
+  padding: 10px 15px;
+  border-radius: 0 0 12px 12px;
+}
+
+.walkthrough__flex {
+  gap: 2rem;
+}
+
+.text--emoji .emoji {
+  font-size: 2rem;
+}
+
+
+
+

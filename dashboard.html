@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dashboard | Serene Route</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+   <!-- Header (Navbar) -->
+  <header class="bg-black text-white py-3">
+    <div class="container">
+      <div class="d-flex justify-content-between align-items-center">
+        <div class="logo-container">
+          <img src="logo.jpg" alt="Serene Route Logo" class="logo-img">
+        </div>
+        <nav class="d-flex align-items-center">
+          <a href="dashboard.html" class="text-white mx-3 fw-bold nav-link">Home</a>
+          <a href="map.html" class="text-white mx-3 fw-bold nav-link">Country Guide</a>
+          <a href="weather.html" class="text-white mx-3 fw-bold nav-link">Weather Forecast</a>
+          <a href="flight.html" class="text-white mx-3 fw-bold nav-link">Flights</a>
+          <a href="accommodation.html" class="text-white mx-3 fw-bold nav-link">Accommodation</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-banner position-relative">
+    <!-- Background Video -->
+    <video autoplay muted loop playsinline>
+      <source src="video_home.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+
+    <!-- Dark Overlay -->
+    <div class="hero-overlay"></div>
+
+    <!-- Hero Content -->
+    <div class="hero-content">
+      <div class="container text-center">
+        <h1 class="fw-bold text-white mb-3">Ready for your next adventure?</h1>
+        <p class="text-white fs-5 mb-4">Plan Your Trip | Travel Like a Pro</p>
+        <div class="d-flex justify-content-center gap-3">
+          <a href="accommodation.html" class="btn btn-outline-light px-4 py-2 rounded-pill">Start Planning</a>
+          <a href="map.html" class="btn btn-light px-4 py-2 rounded-pill">Explore Destinations</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+<section class="container my-5">
+  <div class="text-center mb-5">
+    <h3 class="fw-bold mb-3">Pinpoint your plans</h3>
+    <p class="text-muted">For a clear view of your travel itinerary and seamless planning experience.</p>
+  </div>
+  <div class="row g-4 text-center">
+    <!-- Country Guide -->
+    <div class="col-md-6 col-lg-3">
+      <div class="card h-100 shadow-sm border-0">
+        <div class="card-body">
+          <i class="fa-solid fa-map-location-dot fa-2x text-primary mb-3"></i>
+          <h5 class="card-title">Country Guide</h5>
+          <p class="card-text small">Discover essential travel info and cultural insights by country.</p>
+          <a href="map.html" class="btn btn-sm btn-outline-primary mt-2">Explore</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Weather Forecast -->
+    <div class="col-md-6 col-lg-3">
+      <div class="card h-100 shadow-sm border-0">
+        <div class="card-body">
+          <i class="fa-solid fa-cloud-sun fa-2x text-info mb-3"></i>
+          <h5 class="card-title">Weather Forecast</h5>
+          <p class="card-text small">Stay ahead with accurate weather updates for your destinations.</p>
+          <a href="weather.html" class="btn btn-sm btn-outline-info mt-2">Check Forecast</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Flights -->
+    <div class="col-md-6 col-lg-3">
+      <div class="card h-100 shadow-sm border-0">
+        <div class="card-body">
+          <i class="fa-solid fa-plane-departure fa-2x text-success mb-3"></i>
+          <h5 class="card-title">Flights</h5>
+          <p class="card-text small">Compare flight options and book your journey affordably.</p>
+          <a href="flight.html" class="btn btn-sm btn-outline-success mt-2">Search Flights</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Accommodation -->
+    <div class="col-md-6 col-lg-3">
+      <div class="card h-100 shadow-sm border-0">
+        <div class="card-body">
+          <i class="fa-solid fa-hotel fa-2x text-danger mb-3"></i>
+          <h5 class="card-title">Accommodation</h5>
+          <p class="card-text small">Find and book the perfect stay wherever you go.</p>
+          <a href="accommodation.html" class="btn btn-sm btn-outline-danger mt-2">Book Now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Interactive Intro Notes Section -->
+<section class="container my-5 d-flex flex-column gap-5">
+
+  <!-- Country Guide -->
+  <a href="map.html" class="text-decoration-none text-dark">
+    <div class="d-flex flex-column flex-lg-row align-items-center gap-4">
+      <div class="walkthrough__text">
+        <div class="emoji fs-1 mb-2">📍</div>
+        <h3 class="fw-bold mb-2">Pinpoint your plans for a clear view</h3>
+        <p class="text-muted mb-0">
+          View all your favorite spots on an interactive map, marked with colored pins for easy visual organization.
+        </p>
+      </div>
+      <div>
+        <img src="map.jpg" alt="Interactive Travel Map" class="img-fluid rounded" style="max-width: 500px;" loading="lazy">
+      </div>
+    </div>
+  </a>
+
+  <!-- Weather Forecast -->
+  <a href="weather.html" class="text-decoration-none text-dark">
+    <div class="d-flex flex-column flex-lg-row-reverse align-items-center gap-4">
+      <div class="walkthrough__text">
+        <div class="emoji fs-1 mb-2">🌤️</div>
+        <h3 class="fw-bold mb-2">Stay ahead with accurate forecasts</h3>
+        <p class="text-muted mb-0">
+          Plan smarter by checking current and weekly weather for your destination before you pack.
+        </p>
+      </div>
+      <div>
+        <img src="weather.jpg" alt="Weather Forecast UI" class="img-fluid rounded" style="max-width: 500px;" loading="lazy">
+      </div>
+    </div>
+  </a>
+
+  <!-- Flights -->
+  <a href="flight.html" class="text-decoration-none text-dark">
+    <div class="d-flex flex-column flex-lg-row align-items-center gap-4">
+      <div class="walkthrough__text">
+        <div class="emoji fs-1 mb-2">✈️</div>
+        <h3 class="fw-bold mb-2">Book flights at the best prices</h3>
+        <p class="text-muted mb-0">
+          Discover affordable and convenient flight options for your travel dates in seconds.
+        </p>
+      </div>
+      <div>
+        <img src="flight.jpg" alt="Flight Booking UI" class="img-fluid rounded" style="max-width: 500px;" loading="lazy">
+      </div>
+    </div>
+  </a>
+
+  <!-- Accommodation -->
+  <a href="accommodation.html" class="text-decoration-none text-dark">
+    <div class="d-flex flex-column flex-lg-row-reverse align-items-center gap-4">
+      <div class="walkthrough__text">
+        <div class="emoji fs-1 mb-2">🏨</div>
+        <h3 class="fw-bold mb-2">Stay your way with top stays</h3>
+        <p class="text-muted mb-0">
+          Explore and filter hotels, hostels, and more that match your comfort and budget needs.
+        </p>
+      </div>
+      <div>
+        <img src="accommodation.jpg" alt="Accommodation Booking UI" class="img-fluid rounded" style="max-width: 500px;" loading="lazy">
+      </div>
+    </div>
+  </a>
+
+</section>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white py-4 mt-5">
+    <div class="container-sm text-center">
+      <p class="mb-1">&copy; 2025 Serene Route. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

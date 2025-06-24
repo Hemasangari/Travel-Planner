@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Flight Booking | Serene Route</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <link rel="stylesheet" href="flight.css"/>
+</head>
+<body>
+  <!-- Header (Navbar) -->
+  <header class="bg-black text-white py-3">
+    <div class="container">
+      <div class="d-flex justify-content-between align-items-center">
+        <div class="logo-container">
+          <img src="logo.jpg" alt="Serene Route Logo" class="logo-img">
+        </div>
+        <nav class="d-flex align-items-center">
+          <a href="dashboard.html" class="text-white mx-3 fw-bold nav-link">Home</a>
+          <a href="map.html" class="text-white mx-3 fw-bold nav-link">Country Guide</a>
+          <a href="weather.html" class="text-white mx-3 fw-bold nav-link">Weather Forecast</a>
+          <a href="flight.html" class="text-white mx-3 fw-bold nav-link active">Flights</a>
+          <a href="accommodation.html" class="text-white mx-3 fw-bold nav-link">Accommodation</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <div class="breadcrumbs">
+      <a href="dashboard.html">Home</a>
+      <span>&gt;</span>
+      <a href="flight.html">Flights</a>
+    </div>
+
+    <div class="booking-wrapper">
+      <div class="booking-bg-overlay"></div>
+      <div class="booking-section">
+       
+        
+        <h2 class="booking-title">Flight Booking</h2>
+        <form id="flightForm">
+          <!-- Trip Type -->
+          <div class="trip-type">
+            <input type="radio" name="trip" value="roundtrip" checked> Return
+            <input type="radio" name="trip" value="oneway"> One Way
+          </div>
+
+          <!-- From / To -->
+          <div class="locations">
+            <div class="input-group">
+              <span class="icon">📍</span>
+              <input type="text" id="from" name="from" placeholder="From" autocomplete="off">
+              <div class="autocomplete-results" id="fromResults"></div>
+            </div>
+
+            <button type="button" class="swap">⇄</button>
+
+            <div class="input-group">
+              <span class="icon">📍</span>
+              <input type="text" id="to" name="to" placeholder="To" autocomplete="off">
+              <div class="autocomplete-results" id="toResults"></div>
+            </div>
+          </div>
+
+          <!-- Dates -->
+          <div class="dates">
+            <div class="date-field">
+              <label for="departDate">Depart Date</label>
+              <input type="date" id="departDate" name="departDate">
+            </div>
+            <div class="date-field">
+              <label for="returnDate">Return Date</label>
+              <input type="date" id="returnDate" name="returnDate">
+            </div>
+          </div>
+
+          <!-- Passenger & Cabin Panel -->
+          <div class="guest-cabin-row">
+            <div class="guest-panel">
+              <div class="guests">
+                <label>Guest</label>
+                <div class="guest-group">
+                  <span>Adults (Aged above 12)</span>
+                  <button type="button" onclick="updateCount('adult', -1)">-</button>
+                  <span class="count" id="adultCount">1</span>
+                  <button type="button" onclick="updateCount('adult', 1)">+</button>
+                </div>
+                <div class="guest-group">
+                  <span>Children (Aged 2-11)</span>
+                  <button type="button" onclick="updateCount('child', -1)">-</button>
+                  <span class="count" id="childCount">0</span>
+                  <button type="button" onclick="updateCount('child', 1)">+</button>
+                </div>
+                <div class="guest-group">
+                  <span>Infants (Aged below 2)</span>
+                  <button type="button" onclick="updateCount('infant', -1)">-</button>
+                  <span class="count" id="infantCount">0</span>
+                  <button type="button" onclick="updateCount('infant', 1)">+</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="cabin">
+              <label for="cabinClass">Cabin Class</label>
+              <select id="cabinClass">
+                <option value="economy">Economy</option>
+                <option value="premiumeconomy">Premium Economy</option>
+                <option value="business">Business</option>
+                <option value="first">First</option>
+              </select>
+            </div>
+          </div>
+
+          <button type="submit" class="search-btn">Search Flight</button>
+        </form>
+      </div>
+
+      <div class="promo-section">
+        <h2>✈️ Popular Destinations</h2>
+        <div class="promo-grid">
+          <div class="promo-card" data-destination="NRT">
+            <img src="https://images.unsplash.com/photo-1492571350019-22de08371fd3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Tokyo">
+            <div class="promo-overlay">
+              <h3>Tokyo, Japan</h3>
+              <p>From RM1500</p>
+            </div>
+          </div>
+          
+          <div class="promo-card" data-destination="DPS">
+            <img src="bali.jpg" alt="Bali">
+            <div class="promo-overlay">
+              <h3>Bali, Indonesia</h3>
+              <p>From RM689</p>
+            </div>
+          </div>
+          
+          <div class="promo-card" data-destination="CDG">
+            <img src="https://images.unsplash.com/photo-1431274172761-fca41d930114?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Paris">
+            <div class="promo-overlay">
+              <h3>Paris, France</h3>
+              <p>From RM4180</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="bg-dark text-white py-4 mt-5">
+    <div class="container-sm text-center">
+      <p class="mb-1">&copy; 2025 Serene Route. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="flight.js"></script>
+</body>
+</html>
